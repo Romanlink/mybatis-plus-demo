@@ -2,7 +2,6 @@ package com.suber.demo.controller;
 
 import com.suber.demo.mapper.UserBaseMapper;
 import com.suber.demo.model.UserBase;
-import lombok.Getter;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -20,7 +19,7 @@ public class UserBaseController {
 
     @PostMapping
     public Object insert(@RequestBody UserBase userBase){
-        int rows = userBaseMapper.insert(UserBase.builder().name(userBase.getName()).build());
+        int rows = userBaseMapper.insert(UserBase.builder().nameKey(userBase.getNameKey()).build());
         return "insert success" + rows + "条";
     }
 

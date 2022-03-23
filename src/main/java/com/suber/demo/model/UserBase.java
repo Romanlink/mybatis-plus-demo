@@ -28,14 +28,14 @@ public class UserBase extends Model {
 
     public UserBase(Integer id, String name) {
         this.id = id;
-        this.name = name;
+        this.nameKey = name;
     }
 
     @TableId(value = "id", type = IdType.AUTO)//指定自增策略
     private Integer id;
 
     @TableField(typeHandler = AesTypeHandler.class)
-    private String name;
+    private String nameKey;
 
 //    @TableField(typeHandler = AesTypeHandler.class)
 //    private String desc;

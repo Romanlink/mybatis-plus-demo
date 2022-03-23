@@ -19,6 +19,12 @@
     </properties>
     <dependencies>
 
+        <dependency>
+            <groupId>p6spy</groupId>
+            <artifactId>p6spy</artifactId>
+            <version>3.9.1</version>
+        </dependency>
+
         <!-- AES 加密工具 -->
         <dependency>
             <groupId>cn.hutool</groupId>

@@ -50,7 +50,7 @@ public class UserServiceImplTest {
         QueryWrapper<UserBase> userQueryWrapper = new QueryWrapper<>();
         userQueryWrapper.eq("key_name", "zhangsan");
         int num = mapper.update(UserBase.builder()
-                .name("lisi")
+                .nameKey("lisi")
                 .build(), userQueryWrapper);
         System.out.println("影响行数：" + num);
     }
@@ -59,7 +59,7 @@ public class UserServiceImplTest {
     @Test
     public void changeUserById() {
         int num = mapper.updateById(UserBase.builder()
-                .name("lisi")
+                .nameKey("lisi")
                 .build());
         System.out.println("影响行数：" + num);
     }
@@ -67,7 +67,7 @@ public class UserServiceImplTest {
     //添加一条数据
     @Test
     public void add() {
-        mapper.insert(UserBase.builder().name("zhangsan").build());
+        mapper.insert(UserBase.builder().nameKey("zhangsan").build());
         // 数据库查询
         // select AES_DECRYPT(UNHEX(key_name),'ad1725339b2dd0a68903c57b635942ca') from user_base  where id =2
 
@@ -77,7 +77,7 @@ public class UserServiceImplTest {
     @Test
     public void addList() {
         for (int i = 0; i < 10; i++) {
-            mapper.insert(UserBase.builder().name("zhangsan").build());
+            mapper.insert(UserBase.builder().nameKey("zhangsan").build());
         }
     }
 }
